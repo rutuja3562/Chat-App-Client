@@ -16,7 +16,7 @@ const Chat = () => {
         display="flex"
         justifyContent="space-between"
         w="100%"
-        h="91.5vh"
+        h="93.5vh"
         p="10px"
       >
         {user && <MyChat fetchAgain={fetchAgain} />}

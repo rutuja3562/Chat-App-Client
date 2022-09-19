@@ -165,7 +165,7 @@ const SideDrower = () => {
           </Menu>
           <Menu>
             <MenuButton as={Button}>
-              <Avatar size={"sm"} name={user.user.name} src={user.user.pi} />
+              <Avatar size={"sm"} name={user.user.name} src={user.user.pic} />
             </MenuButton>
             <MenuList>
               <Profile user={user.user}>

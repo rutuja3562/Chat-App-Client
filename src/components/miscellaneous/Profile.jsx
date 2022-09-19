@@ -20,12 +20,15 @@ const Profile = ({ user, children }) => {
   return (
     <>
       {children ? (
-        <span onClick={onOpen}> {children}</span>
+        <span onClick={onOpen}>{children}</span>
       ) : (
         <IconButton
           onClick={onOpen}
+          color="black"
           display={{ base: "flex" }}
           icon={<ViewIcon />}
+          size={30}
+          p={"0px 10px 0px 10px"}
         />
       )}
       <Modal isOpen={isOpen} size={"lg"} onClose={onClose} isCentered>
@@ -47,9 +50,9 @@ const Profile = ({ user, children }) => {
               borderRadius={"full"}
               fit="cover"
               mb={"15px"}
-            //   border="3px solid black"
+              //   border="3px solid black"
             />
-            <Text fontSize={{ base: "20px", md: "30px" }} >{user.email}</Text>
+            <Text fontSize={{ base: "20px", md: "30px" }}>{user.email}</Text>
           </ModalBody>
 
           <ModalFooter>

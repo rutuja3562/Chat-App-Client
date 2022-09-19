@@ -28,19 +28,28 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
           />
           {!selectedChat.isGroupchat ? (
             <>
-              {getSender(user, selectedChat.users)}
-              <Profile user={getSenderFull(user, selectedChat.users)} />
+              <Box display={"flex"} justifyContent="space-between">
+                {getSender(user, selectedChat.users)}
+                <Profile
+                  user={getSenderFull(user, selectedChat.users)}
+                  display={"flex"}
+                  alignItems="end"
+                />
+              </Box>
             </>
           ) : (
-            <>{selectedChat.chatname.toUpperCase()}</>
+            <>{selectedChat.chatname.toUpperCase()}
+            </>
           )}
         </Text>
+       
       ) : (
         <Box
           display={"flex"}
           justifyContent="center"
           alignItems={"center"}
           h="100%"
+          bg={"lightgray"}
         >
           <Text fontSize={"3xl"} pb={3}>
             Click on User to start Chating
