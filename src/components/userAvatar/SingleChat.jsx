@@ -147,9 +147,10 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
             p={3}
             bg="#E8E8E8"
             w="100%"
-            h="100%"
+            h="91%"
             borderRadius="lg"
             overflowY="hidden"
+            // border="3px solid red"
           >
             {loading ? (
               <Spinner
@@ -172,6 +173,7 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
                 width="100%"
                 height="100%"
                 borderRadius="lg"
+                // border="2px solid pink"
                 // overflowY="hidden"
                 // }}
               >
@@ -179,23 +181,27 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
                   messages={messages}
                   // style={{ border: "1px solid blue" }}
                 />
+                <Box>
+                <FormControl
+                  onKeyDown={sendMessage}
+                  isRequired
+                  mt={3}
+                  id="first-name"
+                >
+                  <Input
+                    variant="filled"
+                    bg="#E0E0E0"
+                    placeholder="Enter a message.."
+                    value={newMessage}
+                    onChange={typingHandler}
+                    position="bottom"
+                  />
+                </FormControl>
+              </Box>
+              
               </Box>
             )}
-            <FormControl
-              onKeyDown={sendMessage}
-              isRequired
-              mt={3}
-              id="first-name"
-            >
-              <Input
-                variant="filled"
-                bg="#E0E0E0"
-                placeholder="Enter a message.."
-                value={newMessage}
-                onChange={typingHandler}
-                position="bottom"
-              />
-            </FormControl>
+         
           </Box>
         </>
       ) : (

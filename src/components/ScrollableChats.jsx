@@ -2,6 +2,8 @@ import { Avatar, Box, Tooltip } from "@chakra-ui/react";
 import React, { useContext } from "react";
 import { ScrollElement } from "react-scroll";
 import { chatContex } from "../Contex/ChatProvider";
+// import  scrollable-component  from "scrollable-component";
+import { ScrollableComponentElement } from 'scrollable-component';
 import {
   isLastMessage,
   isSameSender,
@@ -13,7 +15,7 @@ const ScrollableChats = ({ messages }) => {
   const { user } = useContext(chatContex);
   console.log("user", user.user);
   return (
-    <scrollY>
+    <scrollable-component scrollbar-visibility="none">
       {messages &&
         messages.map((m, i) => {
           return (
@@ -49,7 +51,7 @@ const ScrollableChats = ({ messages }) => {
             </Box>
           );
         })}
-    </scrollY>
+    </scrollable-component>
   );
 };
 
